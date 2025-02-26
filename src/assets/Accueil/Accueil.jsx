@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Accueil.css';
 
 const Accueil = () => {
@@ -26,7 +27,7 @@ const Accueil = () => {
       </div>
       <div className="title">Mes projets</div>
       <hr />
-      <div className="containerCartes">
+      <div id='projets' className="containerCartes">
         <section className="projets">
           <div className="flip-container">
             <div className="cartes">
@@ -36,7 +37,9 @@ const Accueil = () => {
               <div className="projet-back">
                 <h3>RPG Textuel</h3>
                 <p>Projet réalisé en python dans le but de créer un jeu textuel</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/rpg-textuel">
+                  <button className="NavRPGTextuel">Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -48,7 +51,9 @@ const Accueil = () => {
               <div className="projet-back">
                 <h3>Projet IA</h3>
                 <p>Familiarisation avec l'utilisation d'IA génératives</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/ProjetIA">
+                  <button>Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -60,7 +65,9 @@ const Accueil = () => {
               <div className="projet-back">
                 <h3>Projet Unity</h3>
                 <p>Création d'un jeu vidéo</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/ProjetUnity">
+                  <button>Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -72,7 +79,9 @@ const Accueil = () => {
               <div className="projet-back">
                 <h3>Projet SQL</h3>
                 <p>Création d'une base de données SQL</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/ProjetSQL">
+                  <button>Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -82,9 +91,11 @@ const Accueil = () => {
                 <img src="./Img/NbfVvWjy57ogHBYBaCqg--0--clyef.jpg" alt="Image Design system" />
               </div>
               <div className="projet-back">
-                <h3>Projet SQL</h3>
+                <h3>Design System</h3>
                 <p>Création d'un design system pour le site Reddit</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/DesignSystem">
+                  <button>Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -96,12 +107,15 @@ const Accueil = () => {
               <div className="projet-back">
                 <h3>Projet Web Vintage</h3>
                 <p>Création d'un site Web des années 2000</p>
-                <button>Cliquer pour voir plus</button>
+                <Link to="/VintageWeb">
+                  <button>Cliquer pour voir plus</button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </div>
+      <hr />
     </div>
   );
 }

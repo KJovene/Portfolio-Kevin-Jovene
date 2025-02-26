@@ -1,0 +1,15 @@
+.footerContainer{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+}
+.footer button {
+  display: flex;
+  padding: 4px;
+  margin: 8px;
+}
