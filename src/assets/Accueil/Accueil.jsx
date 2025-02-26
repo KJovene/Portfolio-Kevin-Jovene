@@ -55,11 +55,11 @@ const Accueil = () => {
           <div className="flip-container">
             <div className="cartes">
               <div className="projet-front">
-                <img src="./Img/Image React2k.jpg" alt="Image React2k" />
+                <img src="./Img/MIsM49FjVcgxQ7HIijRQ--1--1o2sx.jpg" alt="Image FireDoom" />
               </div>
               <div className="projet-back">
-                <h3>Projet Web Vintage</h3>
-                <p>Création d'un site Web des années 2000</p>
+                <h3>Projet Unity</h3>
+                <p>Création d'un jeu vidéo</p>
                 <button>Cliquer pour voir plus</button>
               </div>
             </div>
@@ -79,11 +79,23 @@ const Accueil = () => {
           <div className="flip-container">
             <div className="cartes">
               <div className="projet-front">
-                <img src="./Img/MIsM49FjVcgxQ7HIijRQ--1--1o2sx.jpg" alt="Image FireDoom" />
+                <img src="./Img/NbfVvWjy57ogHBYBaCqg--0--clyef.jpg" alt="Image Design system" />
               </div>
               <div className="projet-back">
-                <h3>Projet Unity</h3>
-                <p>Création d'un jeu vidéo</p>
+                <h3>Projet SQL</h3>
+                <p>Création d'un design system pour le site Reddit</p>
+                <button>Cliquer pour voir plus</button>
+              </div>
+            </div>
+          </div>
+          <div className="flip-container">
+            <div className="cartes">
+              <div className="projet-front">
+                <img src="./Img/Image Web 2000.1.jpg" alt="Image React2k" />
+              </div>
+              <div className="projet-back">
+                <h3>Projet Web Vintage</h3>
+                <p>Création d'un site Web des années 2000</p>
                 <button>Cliquer pour voir plus</button>
               </div>
             </div>

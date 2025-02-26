@@ -1,0 +1,28 @@
+.header {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+.logo {
+  width: 100px;
+  background-color: transparent;
+}
+.navigation {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.navigateur {
+  margin: 0 10px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
