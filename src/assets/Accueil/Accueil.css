@@ -1,7 +1,8 @@
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+:root {
+  --LigthBlue: rgb(5, 104, 190);
+  --White: rgb(228, 222, 216);
+  --Dark: rgb(27, 26, 26);
+  --DarkBlue: rgb(16, 16, 149);
 }
 
 *{
@@ -9,89 +10,62 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  background-color: rgb(228, 222, 216);
 }
 .ecran {
+  background-image: url('/Img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg');
   width: 100%;
-  height: 100vh;
-  background-image: url(./Img/bg3.png);
-  background-position: center;
+  height: 90vh;
   background-size: cover;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   background-color: transparent;
+  padding: 20px;
 }
 .carte {
-  width: 80%;
-  max-width: 440px;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 50px 30px;
+  width: 400px;
+  max-width: 60%;
+  padding: 30px 30px;
   border-radius: 16px;
-  position: relative;
   z-index: 1;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
-}
-.carte::after, .carte::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), rgb(228, 222, 216), rgb(5, 104, 190), rgb(228, 222, 216));
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -1;
-  padding: 5px;
-  border: 2px solid black;
   border-radius: 16px;
-  animation: 7s spin linear infinite;
-}
-@keyframes spin {
-  from {
-    --angle: 0deg;
-  }
-  to {
-    --angle: 360deg;
-  }
-  }
-.carte::before {
-  filter: blur(1.5rem);
-  opacity: 0.5;
-  z-index: -1;
 }
 .carte img {
-  width: 150px;
-  border-radius: 50%;
-  background-color: transparent;
+  width: 200px;
+}
+.pP{
+  border: 1.5px solid var(--White);
+  border-radius: 100%;
 }
 .carte h2 {
   font-size: 50px;
   font-weight: 600px;
+  color: var(--White);
   margin-top: 20px;
   background-color: transparent;
 }
 .carte p {
-  font-size: 20px;
+  font-size: 30px;
   margin: 10px auto;
   max-width: 300px;
   background-color: transparent;
+  color: var(--White);
 }
 .carte .reseau img {
   width: 40px;
   border-radius: 50%;
   margin: 10px 5px;
   transition: background 0.5s;
-  background-color: transparent;
+  background-color: var(--White);
 }
 .carte .reseau img:hover {
-  background: rgb(47, 32, 211);
-  /* background-color: transparent; */
+  background: var(--LigthBlue);
 }
-.logo {
+.logoCard {
   background-color: transparent;
 }
 .bouton {
@@ -100,25 +74,48 @@
   font-size: 20px;
   font-weight: 700;
   background: rgb(228, 222, 216);
-  color: blueviolet;
+  color: var(--LigthBlue);
   padding: 10px 30px;
   border-radius: 30px;
   margin: 30px 0 10px;
 }
-.container_bouton {
-  background-color: transparent;
+.container_bouton button {
+  size: 80px;
 }
 .reseau{
   background-color: transparent;
 }
 .title{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  background-color: var(--Dark);
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.titleText {
   width: 80%;
+  display: flex;
   text-align: start;
-  margin-top: 0px;
-  padding: 30px 0 50px 30px;
   font-size: 30px;
   font-weight: 700;
   color: rgb(5, 104, 190);
+  padding: 20px;
+  opacity: 0; 
+  transition: opacity 0.5s ease-out;
+}
+.titleText.animate {
+  animation: slideInFromLeft 1s forwards;
 }
 .projets{
   display: flex;
@@ -130,6 +127,7 @@
   margin: 0px 20px 20px 0;
   padding: 40px;
   perspective: 1000px;
+  background-color: var(--Dark);
 }
 .flip-container {
   perspective: 1000px;
@@ -151,7 +149,7 @@
   height: 100%;
   backface-visibility: hidden;
   border-radius: 24px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 10px rgba(115, 115, 115, 0.5);
 }
 .projet-front {
   display: flex;
@@ -161,7 +159,10 @@
   transform: rotateY(0deg);
 }
 .projet-back {
-  background-color: purple;
+  background-color: var(--Dark);
+  /* background-image: url('/Img/fond_2_carte.jpg'); */
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -177,19 +178,19 @@
   width: 100%;
   height: 100%;
   border-radius: 24px;
-  /* aspect-ratio: 1/1; */
 }
 .projet-back h3, .projet-front h3 {
   font-weight: 600;
 }
 .projet-back p, .projet-back h3 {
-  background-color: purple;
+  color: var(--White);
 }
 .projet-front p, .projet-front h3 {
-  background-color: blue;
+  /* background-color: transparent; */
 }
 .containerCartes {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: var(--Dark);
 }

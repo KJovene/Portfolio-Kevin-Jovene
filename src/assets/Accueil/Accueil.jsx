@@ -1,44 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Accueil.css';
+import Bouton from '../Bouton/Bouton';
+import { useLocation } from 'react-router-dom';
 
 const Accueil = () => {
   useEffect(() => {
-    import('./Script.js').then((module) => {
-      module.default();
-    });
+    const handleScroll = () => {
+      const titleText = document.querySelector('.titleText');
+      const rect = titleText.getBoundingClientRect();
+      if (window.innerHeight && rect.bottom >= 0) {
+        titleText.classList.add('animate');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <div>
       <div className="ecran">
-        <div className="carte" data-tilt>
-          <img src="./Img/Photo CV-fotor-202502201620.png" alt="Photo de profil" />
+        <div className="carte">
+          <img src="/Img/Photo_CV-removebg-preview.png" className="pP" alt="Photo de profil" />
           <h2>Kévin Jovené</h2>
           <p>Développeur Web Fullstack</p>
           <div className="reseau">
-            <a href="https://fr.linkedin.com/" className="logo"><img src="./Img/logo-linkedin-noir.webp" alt="LinkedIn" /></a>
-            <a href="https://github.com/" className="logo"><img src="./Img/Octicons-mark-github.svg" alt="GitHub" /></a>
+            <a href="https://fr.linkedin.com/" className="logoCard"><img src="./Img/logo-linkedin-noir.webp" alt="LinkedIn" /></a>
+            <a href="https://github.com/" className="logoCard"><img src="./Img/Octicons-mark-github.svg" alt="GitHub" /></a>
           </div>
           <div className="container_bouton">
-            <a href="mailto:jovene.kevin@gmail.com" className="bouton">Contactez moi</a>
+            <Bouton text="Contactez moi" mail="jovene.kevin@gmail.com" />
           </div>
         </div>
       </div>
-      <div className="title">Mes projets</div>
-      <hr />
+      <div className="title">
+        <div className="titleText">Mes projets</div>
+      </div>
       <div id='projets' className="containerCartes">
         <section className="projets">
           <div className="flip-container">
             <div className="cartes">
               <div className="projet-front">
-                <img src="./Img/RPG texttuel.jpg" alt="Image RPG Textuel" />
+                <img src="../../../Img/ImageRpg/RPG texttuel.jpg" alt="Image RPG Textuel" />
               </div>
               <div className="projet-back">
                 <h3>RPG Textuel</h3>
                 <p>Projet réalisé en python dans le but de créer un jeu textuel</p>
-                <Link to="/rpg-textuel">
-                  <button className="NavRPGTextuel">Cliquer pour voir plus</button>
+                <Link to="/RPGTextuel">
+                  <Bouton text="Cliquer pour voir plus" />
                 </Link>
               </div>
             </div>
@@ -52,7 +64,7 @@ const Accueil = () => {
                 <h3>Projet IA</h3>
                 <p>Familiarisation avec l'utilisation d'IA génératives</p>
                 <Link to="/ProjetIA">
-                  <button>Cliquer pour voir plus</button>
+                  <Bouton text="Cliquer pour voir plus" />
                 </Link>
               </div>
             </div>
@@ -66,8 +78,7 @@ const Accueil = () => {
                 <h3>Projet Unity</h3>
                 <p>Création d'un jeu vidéo</p>
                 <Link to="/ProjetUnity">
-                  <button>Cliquer pour voir plus</button>
-                </Link>
+                  <Bouton text="Cliquer pour voir plus" />               </Link>
               </div>
             </div>
           </div>
@@ -80,7 +91,7 @@ const Accueil = () => {
                 <h3>Projet SQL</h3>
                 <p>Création d'une base de données SQL</p>
                 <Link to="/ProjetSQL">
-                  <button>Cliquer pour voir plus</button>
+                  <Bouton text="Cliquer pour voir plus" />
                 </Link>
               </div>
             </div>
@@ -94,7 +105,7 @@ const Accueil = () => {
                 <h3>Design System</h3>
                 <p>Création d'un design system pour le site Reddit</p>
                 <Link to="/DesignSystem">
-                  <button>Cliquer pour voir plus</button>
+                  <Bouton text="Cliquer pour voir plus" />
                 </Link>
               </div>
             </div>
@@ -108,7 +119,35 @@ const Accueil = () => {
                 <h3>Projet Web Vintage</h3>
                 <p>Création d'un site Web des années 2000</p>
                 <Link to="/VintageWeb">
-                  <button>Cliquer pour voir plus</button>
+                  <Bouton text="Cliquer pour voir plus" />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="flip-container">
+            <div className="cartes">
+              <div className="projet-front">
+                <img src="./Img/Image Web 2000.1.jpg" alt="Image React2k" />
+              </div>
+              <div className="projet-back">
+                <h3>Projet Alternance</h3>
+                <p>Création d'un stockage pour la recherche d'alternance</p>
+                <Link to="/Alternance">
+                  <Bouton text="Cliquer pour voir plus" />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="flip-container">
+            <div className="cartes">
+              <div className="projet-front">
+                <img src="./Img/Image Web 2000.1.jpg" alt="Image React2k" />
+              </div>
+              <div className="projet-back">
+                <h3>Projet WeTransfer</h3>
+                <p>Création d'une application similaire à WeTransfer'</p>
+                <Link to="/WeTransfer">
+                  <Bouton text="Cliquer pour voir plus" />
                 </Link>
               </div>
             </div>

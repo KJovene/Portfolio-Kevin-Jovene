@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
+import Bouton from "../Bouton/Bouton";
 
 const Header = () => {
-  
+  const location = useLocation();
+
   const scrollToProjects = () => {
     const projectsSection = document.getElementById('projets');
     if (projectsSection) {
@@ -12,21 +14,23 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="headerContainer">
       <header className="header">
-        <img src="../Img/Logo Blue.svg" className="logo" alt="Logo"/>
-        <h3>Portfolio de Kévin Jovené</h3>
+        <div className="headerContent">
+          <img src="../Img/Logo Blue.svg" className="logoHeader" alt="Logo"/>
+          <div className="navigation">
+            <Link to="/Accueil">
+              <Bouton text="Accueil" />
+            </Link>
+            {location.pathname === '/Accueil' && (
+              <Bouton text="Projets" onClick={scrollToProjects}/>
+            )}
+            <Link to='/CV'>
+              <Bouton text="CV" />
+            </Link>
+          </div>
+        </div>
       </header>
-      <div className="navigation">
-        <Link to="/Accueil">
-          <button className="navigateur">Accueil</button>
-        </Link>
-        <button className="navigateur" onClick={scrollToProjects}>Projets</button>
-        <Link to='/CV'>
-          <button className="navigateur">CV</button>
-        </Link>
-      </div>
-      <hr />
     </div>
   );
 }

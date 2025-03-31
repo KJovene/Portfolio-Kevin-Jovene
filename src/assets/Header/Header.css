@@ -1,3 +1,13 @@
+:root {
+  --LigthBlue: rgb(5, 104, 190);
+  --White: rgb(228, 222, 216);
+  --Dark: rgb(27, 26, 26);
+}
+.headerContainer {
+  width: 100%;
+  background-color: var(--Dark);
+  z-index: 10;
+}
 .header {
   width: 80%;
   margin: 0 auto;
@@ -5,24 +15,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: var(--Dark);
 }
-.logo {
-  width: 100px;
-  background-color: transparent;
+.headerContent {
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--Dark);
+}
+.logoHeader {
+  width: 70px;
+  background-color: transparent
 }
 .navigation {
   display: flex;
   width: 80%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px 20px;
+  background-color: var(--Dark);
 }
-.navigateur {
-  margin: 0 10px;
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-  background: none;
-  border-radius: 8px;
-  cursor: pointer;
+.header h3 {
+  background-color: var(--Dark);
+  color : var(--White);
 }
