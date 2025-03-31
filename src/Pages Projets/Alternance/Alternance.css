@@ -33,6 +33,7 @@
 }
 .BodyAlter {
   display: grid;
+  padding-top: 10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 2em;
@@ -41,15 +42,16 @@
   margin: 0 auto;
   justify-content: center;
   grid-template-areas: 
-  "box-1 box-5"
-  "box-2 box-3"
-  "box-4 box-6";
+  "box-1 box-2"
+  "box-3 box-6"
+  "box-4 box-5";
   padding: 20px;
 }
 .TitreAlter {
   display: flex;
-  background-image: url('../../../Img/ImageRpg/6HaeNcUWKy0y93SZp4xX--1--uxykp.jpg');
+  background-image: url('../../../Img/ImageAlter/entretien-au-cafe_1098-13331.avif');
   background-size: cover;
+  background-position: center;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -99,6 +101,11 @@ h2{
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.conclusionAlter.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .LienAlter {
   width: 80%;
@@ -116,45 +123,73 @@ h2{
   padding: 10px 20px;
   background-color: var(--LigthBlue);
 }
-.objectifAlter{
+.LienAlter a:hover {
+  background-color: var(--White);
+  color: var(--Dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.resumeAlter {
   opacity: 0;
   grid-area: box-1;
-  transition: opacity 0.5s ease-out;  
+  transition: opacity 0.5s ease-out;   
 }
-.objectifAlter.animate{
+.resumeAlter.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.technologiesAlter{
+.objectifAlter{
   opacity: 0;
   grid-area: box-2;
   transition: opacity 0.5s ease-out;  
 }
-.technologiesAlter.animate{
+.objectifAlter.animate{
   animation: slideInFromRight 1s forwards;
+}
+.technologiesAlter{
+  opacity: 0;
+  grid-area: box-3;
+  transition: opacity 0.5s ease-out;  
+}
+.technologiesAlter.animate{
+  animation: slideInFromLeft 1s forwards;
 }
 .fonctionnementAlter{
   opacity: 0;
-  grid-area: box-3;
+  grid-area: box-4;
   transition: opacity 0.5s ease-out;  
 }
 .fonctionnementAlter.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.imageAlter img{
-  width: 60%;
+.fonctionnement2Alter{
+  opacity: 0;
+  grid-area: box-5;
+  transition: opacity 0.5s ease-out;  
+}
+.fonctionnement2Alter.animate{
+  animation: slideInFromRight 1s forwards;
 }
 .imageAlter{
-  display: flex;
-  grid-area: box-5;
-  justify-content: center;
-  align-items: center;
-}
-.image2Alter img{
-  width: 70%;
-}
-.image2Alter{
   display: flex;
   grid-area: box-6;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
+}
+.imageAlter.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
+}
+.imageAlter img{
+  width: 70%;
+  height: 80%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageAlter:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
 }

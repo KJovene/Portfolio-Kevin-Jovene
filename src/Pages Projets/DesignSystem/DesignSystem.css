@@ -4,7 +4,16 @@
   --Dark: rgb(27, 26, 26);
   --DarkBlue: rgb(16, 16, 149);
 }
-
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -34,7 +43,7 @@
 .BodySystem {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
   gap: 2em;
   width: 80%;
   height: 100%;
@@ -42,14 +51,14 @@
   justify-content: center;
   grid-template-areas: 
   "box-1 box-4"
-  "box-2 box-3"
-  "box-5 box-5";
+  "box-2 box-4";
   padding: 20px;
 }
 .TitreSystem {
   display: flex;
-  background-image: url('../../../Img/ImageRpg/6HaeNcUWKy0y93SZp4xX--1--uxykp.jpg');
+  background-image: url('../../../Img/ImageSystem/2afcc689-16cd-4ce4-86ca-958944ce350b-cover.png');
   background-size: cover;
+  background-position: center;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -99,6 +108,11 @@ h2{
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.conclusionSystem.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .objectifSystem{
   opacity: 0;
@@ -114,31 +128,38 @@ h2{
   transition: opacity 0.5s ease-out;  
 }
 .methodoSystem.animate{
-  animation: slideInFromRight 1s forwards;
+  animation: slideInFromLeft 1s forwards;
 }
 .fonctionnementSystem{
+  padding-left: 11%;
   opacity: 0;
-  grid-area: box-3;
+  justify-content: center;
   transition: opacity 0.5s ease-out;  
 }
 .fonctionnementSystem.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.imageRPG img{
-  width: 60%;
-}
-.imageRPG{
+.imageSystem{
   display: flex;
   grid-area: box-4;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
 }
-.image2RPG img{
-  width: 70%;
+.imageSystem.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
 }
-.image2RPG{
-  display: flex;
-  grid-area: box-5;
-  justify-content: center;
-  align-items: center;
+.imageSystem img{
+  width: 60%;
+  height: 50%;
+  rotate: 90deg;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageSystem:hover img{
+  transform: scale(1.1) rotate(-75deg);
+  transition: transform 0.3s ease;
 }

@@ -48,7 +48,8 @@
 }
 .TitreTransfer {
   display: flex;
-  background-image: url('../../../Img/ImageRpg/6HaeNcUWKy0y93SZp4xX--1--uxykp.jpg');
+  background-image: url('../../../Img/ImageTransfer/deux-mains-humaines-filaires-polygonales-luminescentes-s-etirant-vers-autre_1284-30755.avif');
+  background-position: center;
   background-size: cover;
   text-align: center;
   justify-content: center;
@@ -99,6 +100,11 @@ h2{
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.conclusionTransfer.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .LienTransfer {
   width: 80%;
@@ -116,9 +122,24 @@ h2{
   padding: 10px 20px;
   background-color: var(--LigthBlue);
 }
-.objectifTransfer{
+.LienTransfer a:hover {
+  background-color: var(--White);
+  color: var(--Dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.resumeTransfer{
   opacity: 0;
   grid-area: box-1;
+  transition: opacity 0.5s ease-out;  
+}
+.resumeTransfer.animate{
+  animation: slideInFromLeft 1s forwards;
+}
+.objectifTransfer{
+  opacity: 0;
+  grid-area: box-2;
   transition: opacity 0.5s ease-out;  
 }
 .objectifTransfer.animate{
@@ -126,7 +147,7 @@ h2{
 }
 .technologiesTransfer{
   opacity: 0;
-  grid-area: box-2;
+  grid-area: box-3;
   transition: opacity 0.5s ease-out;  
 }
 .technologiesTransfer.animate{
@@ -134,27 +155,53 @@ h2{
 }
 .fonctionnementTransfer{
   opacity: 0;
-  grid-area: box-3;
+  grid-area: box-4;
   transition: opacity 0.5s ease-out;  
 }
 .fonctionnementTransfer.animate{
   animation: slideInFromLeft 1s forwards;
-}
-.imageTransfer img{
-  width: 60%;
 }
 .imageTransfer{
   display: flex;
   grid-area: box-5;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
 }
-.image2Transfer img{
+.imageTransfer.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
+}
+.imageTransfer img{
   width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageTransfer:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
 }
 .image2Transfer{
   display: flex;
   grid-area: box-6;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
+}
+.image2Transfer.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
+}
+.image2Transfer img{
+  width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.image2Transfer:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
 }

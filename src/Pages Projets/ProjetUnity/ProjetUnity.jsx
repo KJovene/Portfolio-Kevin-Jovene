@@ -1,11 +1,12 @@
 import React, { useEffect} from 'react';
 import Menu from '../../assets/Menu/Menu';
 import './ProjetUnity.css';
+import { motion } from 'framer-motion';
 
 const ProjetUnity = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifUnity, .technologiesUnity, .fonctionnaliteUnity');
+        const elements = document.querySelectorAll('.objectifUnity, .technologiesUnity, .fonctionnaliteUnity, .conclusionUnity, .imageUnity, .image2Unity');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,16 +24,25 @@ const ProjetUnity = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreUnity">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreUnity">
         <div className="containerTitre">
           <h1>Développement d'un shooter sur Unity</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodyUnity">
-        <div className='imageunity'>
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
-        </div>
         <div className="objectifUnity">
           <h2>Objectifs du projet</h2>
           <p>L’objectif était de concevoir un jeu de tir dynamique, en développant nous-mêmes les fonctionnalités essentielles du gameplay, notamment :</p>
@@ -69,8 +79,8 @@ const ProjetUnity = () => {
             <li>Spawn et gestion d’ennemis : Apparition dynamique et vague d’ennemis pour augmenter la difficulté progressivement</li>
           </ul>
         </div>
-        <div className="image2Unity">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
+        <div className="imageUnity">
+          <img src="../../../Img/ImageUnity/Unity.jpg" alt="Image RPG" />
         </div>
       </div>
       <div className="LienUnity">

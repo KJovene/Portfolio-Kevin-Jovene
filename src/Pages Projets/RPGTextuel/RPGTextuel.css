@@ -4,7 +4,16 @@
   --Dark: rgb(27, 26, 26);
   --DarkBlue: rgb(16, 16, 149);
 }
-
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -41,9 +50,9 @@
   margin: 0 auto;
   justify-content: center;
   grid-template-areas: 
-  "box-1 box-5"
+  "box-1 box-6"
   "box-2 box-3"
-  "box-4 box-6";
+  "box-5 box-4";
   padding: 20px;
 }
 .TitreRPG {
@@ -99,6 +108,11 @@ h2{
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.conclusionRPG.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .LienRPG {
   width: 80%;
@@ -115,6 +129,13 @@ h2{
   border-radius: 15px;
   padding: 10px 20px;
   background-color: var(--LigthBlue);
+}
+.LienRPG a:hover {
+  background-color: var(--White);
+  color: var(--Dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 .conceptionRPG{
   opacity: 0;
@@ -148,21 +169,47 @@ h2{
 .fonctionnaliteRPG.animate{
   animation: slideInFromRight 1s forwards;
 }
-.imageRPG img{
-  width: 60%;
-}
 .imageRPG{
   display: flex;
   grid-area: box-5;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
 }
-.image2RPG img{
+.imageRPG.animate{
+  animation: slideInFromLeft 1s forwards;
+  animation-delay: 0.5s; 
+}
+.imageRPG img{
   width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageRPG:hover img{
+  transform: scale(1.1) rotate(-15deg);
+  transition: transform 0.3s ease;
 }
 .image2RPG{
   display: flex;
   grid-area: box-6;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
+}
+.image2RPG.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
+}
+.image2RPG img{
+  width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.image2RPG:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
 }

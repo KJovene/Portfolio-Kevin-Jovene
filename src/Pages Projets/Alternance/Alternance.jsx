@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import './Alternance.css';
 import Menu from '../../assets/Menu/Menu';
+import { motion } from 'framer-motion';
 
 const Alternance = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifAlter, .technologiesAlter, .fonctionnementAlter, .conclusionAlter');
+        const elements = document.querySelectorAll('.objectifAlter, .technologiesAlter, .fonctionnementAlter, .conclusionAlter, .imageAlter, .fonctionnement2Alter');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,18 +24,33 @@ const Alternance = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreAlter">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreAlter">
         <div className="containerTitre">
           <h1>Application de gestion de candidature</h1>
         </div>
-      </div>
-      <div className='ResumeAlter'>
-        <p>Nous avons développé une application web collaborative permettant de centraliser et suivre nos candidatures, avec une fonctionnalité de relance automatique. Ce projet nous a permis de combiner Node.js, React et MongoDB pour concevoir une plateforme efficace.</p>
-        </div>
+      </motion.div>
       <div className="BodyAlter">
+        <div className='ResumeAlter'>
+          <h2>
+            Résumé du projet
+          </h2>
+          <p>Nous avons développé une application web collaborative permettant de centraliser et suivre nos candidatures, avec une fonctionnalité de relance automatique. Ce projet nous a permis de combiner Node.js, React et MongoDB pour concevoir une plateforme efficace.</p>
+        </div>
         <div className='imageAlter'>
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
+          <img src="../../../Img/ImageAlter/nature-morte-pile-documents_23-2151088774.avif" alt="Image Alternance" />
         </div>
         <div className="objectifAlter">
           <h2>Objectifs du projet</h2>
@@ -62,6 +78,8 @@ const Alternance = () => {
             <li>Affichage des candidatures sous forme de cartes pour une meilleure lisibilité</li>
             <li>Filtrage et tri par statut (en attente, accepté, refusé.)</li>
           </ul>
+        </div>
+        <div className="fonctionnement2Alter">
           <h3>2 - Système de relance automatique</h3>
           <ul>
             <li>Programmation d’envoi d’e-mails automatiques aux recruteurs avec Nodemailer</li>
@@ -73,9 +91,6 @@ const Alternance = () => {
             <li>API REST avec Express.js pour gérer les opérations CRUD (ajout, modification, suppression de candidatures)</li>
             <li>Stockage des données sur MongoDB, facilitant l’accès et la mise à jour des informations</li>
           </ul>
-        </div>
-        <div className="image2Alter">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
         </div>
       </div>
       <div className="LienAlter">

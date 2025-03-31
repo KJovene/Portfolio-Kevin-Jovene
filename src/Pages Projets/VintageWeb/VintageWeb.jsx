@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import './VintageWeb.css';
 import Menu from '../../assets/Menu/Menu';
+import { motion } from 'framer-motion';
 
 const VintageWeb = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifVintage, .technologiesVintage, .fonctionnementVintage, .conclusionVintage');
+        const elements = document.querySelectorAll('.objectifVintage, .technologiesVintage, .fonctionnementVintage, .conclusionVintage, .imageVintage, .image2Vintage, .fonctionnement2Vintage');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,15 +24,27 @@ const VintageWeb = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreVintage">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreVintage">
         <div className="containerTitre">
-          <h1>Site web Vintage en React</h1>
+          <h1>Site Web vintage en React</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodyVintage">
         <div className='imageVintage'>
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
+          <img src="../../../Img/ImageVintage/jeuxvideo.com-en-2000.jpg" alt="Image Vintage" />
         </div>
         <div className="objectifVintage">
           <h2>Objectifs du projet</h2>
@@ -74,6 +87,8 @@ const VintageWeb = () => {
             <li>Utilisation de reducers et actions pour modifier l’état de manière efficace</li>
             <li>Stockage persistant pour conserver l’état entre différentes sessions</li>
           </ul>
+        </div>
+        <div className="fonctionnement2Vintage">
           <h3>4 - Navigation entre pages avec React Router</h3>
           <ul>
             <li>Mise en place d’un système de navigation fluide</li>
@@ -88,11 +103,11 @@ const VintageWeb = () => {
           </ul>
         </div>
         <div className="image2Vintage">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
+          <img src="../../../Img/ImageVintage/youtube-ui-update-april08.jpg" alt="Image vintage" />
         </div>
       </div>
       <div className="LienVintage">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main">Accédez au GitHub</a>
+        <a href="https://github.com/KJovene/HETIC-Annee-2k-website/tree/main">Accédez au GitHub</a>
       </div>
       <div className="conclusionVintage">
         <h2>Conclusion</h2>

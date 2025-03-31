@@ -22,7 +22,7 @@ const Header = () => {
             <Link to="/Accueil">
               <Bouton text="Accueil" />
             </Link>
-            {location.pathname === '/Accueil' && (
+            {(location.pathname === '/Accueil' || location.pathname === '/') && (
               <Bouton text="Projets" onClick={scrollToProjects}/>
             )}
             <Link to='/CV'>

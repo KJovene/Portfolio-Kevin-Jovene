@@ -5,6 +5,16 @@
   --DarkBlue: rgb(16, 16, 149);
 }
 
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
@@ -42,13 +52,13 @@
   justify-content: center;
   grid-template-areas: 
   "box-1 box-4"
-  "box-2 box-3"
-  "box-5 box-5";
+  "box-2 box-4"
+  "box-3 box-3";
   padding: 20px;
 }
 .TitreSQL {
   display: flex;
-  background-image: url('../../../Img/ImageRpg/6HaeNcUWKy0y93SZp4xX--1--uxykp.jpg');
+  background-image: url('../../../Img/ImageSQL/concept-hebergement-site-web-circuits_23-2149406782.avif');
   background-size: cover;
   text-align: center;
   justify-content: center;
@@ -101,24 +111,8 @@ h2{
   padding: 20px 0;
   transition: opacity 0.5s ease-out;  
 }
-.conslusionSQL.animate{
-  animation: slideInFromLeft 1s forwards;
-}
-.LienSQL {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-}
-.LienSQL a {
-  color: var(--White);
-  text-decoration: none;
-  font-size: 20px;
-  border: 1px solid var(--White);
-  border-radius: 15px;
-  padding: 10px 20px;
-  background-color: var(--LigthBlue);
+.conclusionSQL.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .objectifSQL{
   opacity: 0;
@@ -134,7 +128,7 @@ h2{
   transition: opacity 0.5s ease-out;  
 }
 .methodoSQL.animate{
-  animation: slideInFromRight 1s forwards;
+  animation: slideInFromLeft 1s forwards;
 }
 .fonctionnementSQL{
   opacity: 0;
@@ -144,21 +138,25 @@ h2{
 .fonctionnementSQL.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.imageSQL img{
-  width: 60%;
-}
 .imageSQL{
   display: flex;
   grid-area: box-4;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
 }
-.image2SQL img{
-  width: 70%;
+.imageSQL.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
 }
-.image2SQL{
-  display: flex;
-  grid-area: box-5;
-  justify-content: center;
-  align-items: center;
+.imageSQL img{
+  height: 80%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageSQL:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
 }
