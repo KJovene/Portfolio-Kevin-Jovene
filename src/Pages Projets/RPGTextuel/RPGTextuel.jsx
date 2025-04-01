@@ -44,7 +44,7 @@ const RPGTextuel = () => {
       </motion.div>
       <div className="BodyRPGTextuel">
         <div className='imageRPG'>
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
+          <img src="/public/Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
         </div>
         <div className="conceptionRPG">
           <h2>Conception et développement</h2>
@@ -87,7 +87,7 @@ const RPGTextuel = () => {
           </ul>
         </div>
         <div className="image2RPG">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
+          <img src="/public/Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
         </div>
       </div>
       <div className="LienRPG">

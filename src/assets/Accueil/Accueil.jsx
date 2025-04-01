@@ -31,7 +31,7 @@ const Accueil = () => {
       transition={{ duration: 0.5 }}
       className="ecran">
         <div className="carte">
-          <img src="/Img/Photo_CV-removebg-preview.png" className="pP" alt="Photo de profil" />
+          <img src="/public/Img/Photo_CV-removebg-preview.png" className="pP" alt="Photo de profil" />
           <h2>Kévin Jovené</h2>
           <p>Développeur Web Fullstack</p>
           <div className="reseau">
