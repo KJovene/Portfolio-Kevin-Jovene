@@ -12,9 +12,6 @@ const Footer = () => {
           <div className="linkFooter">
             <a href="mailto:jovene.kevin@gmail.com">Me contacter</a>
           </div>
-          <Link to='/CV'>
-            <Bouton text="Voir mon CV" />
-          </Link>
           <img src="../../../Img/Logo Blue.svg" alt="Logo" />
         </div>
       </div>

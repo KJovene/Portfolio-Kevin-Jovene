@@ -12,6 +12,7 @@
   justify-content: space-between;
   text-align: center;
   background-color: var(--Dark);
+  padding-top: 20px;
 }
 .linkFooter{
   display: flex;

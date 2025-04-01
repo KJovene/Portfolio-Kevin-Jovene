@@ -94,7 +94,7 @@ const Alternance = () => {
         </div>
       </div>
       <div className="LienAlter">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main">Accédez au GitHub</a>
+        <a href="https://github.com/KJovene/Alter-Project/tree/dev">Accédez au GitHub</a>
       </div>
       <div className="conclusionAlter">
         <h2>Conclusion</h2>

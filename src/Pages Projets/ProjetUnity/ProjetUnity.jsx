@@ -84,7 +84,7 @@ const ProjetUnity = () => {
         </div>
       </div>
       <div className="LienUnity">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main">Accédez au GitHub</a>
+        <a href="https://github.com/KJovene/projet_unity/tree/main">Accédez au GitHub</a>
       </div>
       <div className="conclusionUnity">
         <h2>Conclusion</h2>

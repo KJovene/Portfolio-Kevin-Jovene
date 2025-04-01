@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 import Bouton from "../Bouton/Bouton";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const location = useLocation();
@@ -14,7 +15,12 @@ const Header = () => {
   };
 
   return (
-    <div className="headerContainer">
+    <motion.div 
+    motions={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5 }}
+    className="headerContainer">
       <header className="header">
         <div className="headerContent">
           <img src="../Img/Logo Blue.svg" className="logoHeader" alt="Logo"/>
@@ -31,7 +37,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </div>
+    </motion.div>
   );
 }
 
