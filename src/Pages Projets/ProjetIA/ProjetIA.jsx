@@ -1,11 +1,12 @@
 import React, { useEffect} from 'react';
 import Menu from '../../assets/Menu/Menu';
 import './ProjetIA.css';
+import { motion } from 'framer-motion';
 
 const ProjetIA = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifIA, .methodoIA, .fonctionnementIA');
+        const elements = document.querySelectorAll('.objectifIA, .methodoIA, .fonctionnementIA, .conclusionIA, .imageIA, .image2IA');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,15 +24,27 @@ const ProjetIA = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreIA">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreIA">
         <div className="containerTitre">
           <h1>Exploration de l'IA générative</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodyIA">
         <div className='imageIA'>
-          <img src="../../../Img/jeremy-bishop-G9i_plbfDgk-unsplash.jpg" alt="Image IA" />
+          <img src="../../../Img/ImageIA/Sergei-Manzhos-reseaux-neurones-artificiels-au-service-modelisation-de-matiere.jpg" alt="Image IA" />
         </div>
         <div className="objectifIA">
           <h2>Conception et développement</h2>
@@ -64,11 +77,8 @@ const ProjetIA = () => {
           </ul>
         </div>
         <div className="image2IA">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
+          <img src="../../../Img/ImageIA/Intelligence_artificielle-1536x864.jpg" alt="Image RPG" />
         </div>
-      </div>
-      <div className="LienIA">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main">Accédez au GitHub</a>
       </div>
       <div className="conclusionIA">
         <h2>Conclusion</h2>

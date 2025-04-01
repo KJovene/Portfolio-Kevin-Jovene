@@ -42,13 +42,13 @@
   justify-content: center;
   grid-template-areas: 
   "box-1 box-5"
-  "box-2 box-3"
-  "box-4 box-6";
+  "box-6 box-2"
+  "box-3 box-4";
   padding: 20px;
 }
 .TitreVintage {
   display: flex;
-  background-image: url('../../../Img/ImageRpg/6HaeNcUWKy0y93SZp4xX--1--uxykp.jpg');
+  background-image: url('../../../Img/ImageVintage/xAdobeStock_163162886-2000x750.jpeg.pagespeed.ic.AiBvz6R7dc.jpg');
   background-size: cover;
   text-align: center;
   justify-content: center;
@@ -99,6 +99,11 @@ h2{
   margin: 0 auto;
   width: 80%;
   padding: 20px 0;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.conclusionVintage.animate{
+  animation: slideInFromBottom 1s forwards;
 }
 .LienVintage {
   width: 80%;
@@ -116,6 +121,13 @@ h2{
   padding: 10px 20px;
   background-color: var(--LigthBlue);
 }
+.LienVintage a:hover {
+  background-color: var(--White);
+  color: var(--Dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
 .objectifVintage{
   opacity: 0;
   grid-area: box-1;
@@ -124,12 +136,12 @@ h2{
 .objectifVintage.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.technologieVintage{
+.technologiesVintage{
   opacity: 0;
   grid-area: box-2;
   transition: opacity 0.5s ease-out;  
 }
-.methodoRPG.animate{
+.technologiesVintage.animate{
   animation: slideInFromRight 1s forwards;
 }
 .fonctionnementVintage{
@@ -140,21 +152,55 @@ h2{
 .fonctionnementVintage.animate{
   animation: slideInFromLeft 1s forwards;
 }
-.imageVintage img{
-  width: 60%;
-}
-.imageVintage{
-  display: flex;
+.fonctionnement2Vintage{
+  opacity: 0;
   grid-area: box-4;
-  justify-content: center;
-  align-items: center;
+  transition: opacity 0.5s ease-out;  
 }
-.image2Vintage img{
-  width: 70%;
+.fonctionnement2Vintage.animate{
+  animation: slideInFromRight 1s forwards;
 }
-.image2Vintage{
+.imageVintage {
   display: flex;
   grid-area: box-5;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.5s ease-out;
+}
+.imageVintage.animate{
+  animation: slideInFromRight 1s forwards;
+  animation-delay: 0.5s; 
+}
+.imageVintage img{
+  width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.imageVintage:hover img{
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease;
+}
+.image2Vintage{
+  display: flex;
+  grid-area: box-6;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out;
+}
+.image2Vintage.animate{
+  animation: slideInFromLeft 1s forwards;
+  animation-delay: 0.5s; 
+}
+.image2Vintage img{
+  width: 70%;
+  box-shadow: 5px 5px 10px var(--LigthBlue), -5px -5px 10px var(--LigthBlue);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  transform: scale(1) rotate(0deg);
+}
+.image2Vintage:hover img{
+  transform: scale(1.1) rotate(-15deg);
+  transition: transform 0.3s ease;
 }

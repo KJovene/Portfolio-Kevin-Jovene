@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import Menu from '../../assets/Menu/Menu';
 import './RPGTextuel.css';
+import { motion } from 'framer-motion';
 
 const RPGTextuel = () => {
   useEffect(() => {
     const handleScroll = () => {
-      const elements = document.querySelectorAll('.fonctionnaliteRPG, .orgaRPG, .conceptionRPG, .methodoRPG');
+      const elements = document.querySelectorAll('.fonctionnaliteRPG, .orgaRPG, .conceptionRPG, .methodoRPG, .conclusionRPG, .imageRPG, .image2RPG');
       elements.forEach(element => {
         const rect = element.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,12 +24,24 @@ const RPGTextuel = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreRPG">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreRPG">
         <div className="containerTitre">
-          <h1>Projet RPG Textuel en Python</h1>
+          <h1>RPG textuel en Python</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodyRPGTextuel">
         <div className='imageRPG'>
           <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />

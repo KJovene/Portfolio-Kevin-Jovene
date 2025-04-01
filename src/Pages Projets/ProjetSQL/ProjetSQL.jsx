@@ -1,11 +1,12 @@
 import React, { useEffect} from 'react';
 import './ProjetSQL.css';
 import Menu from '../../assets/Menu/Menu';
+import { motion } from 'framer-motion';
 
 const ProjetSQL = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifSQL, .methodoSQL, .fonctionnementSQL, .conclusionSQL');
+        const elements = document.querySelectorAll('.objectifSQL, .methodoSQL, .fonctionnementSQL, .conclusionSQL, .imageSQL, .image2SQL');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,15 +24,27 @@ const ProjetSQL = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreSQL">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreSQL">
         <div className="containerTitre">
-          <h1>Projet Base de donnée en SQL</h1>
+          <h1>Base de donnée SQL</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodySQL">
         <div className='imageSQL'>
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image SQL" />
+          <img src="../../../Img/ImageSQL/arriere-plan-technologie-du-gradient_23-2151895841.avif" alt="Image SQL" />
         </div>
         <div className="objectifSQL">
           <h2>Conception et développement</h2>
@@ -66,12 +79,6 @@ const ProjetSQL = () => {
             <li>Fonctions d’agrégation (COUNT, AVG, SUM) pour analyser les données</li>
           </ul>
         </div>
-        <div className="image2SQL">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image RPG" />
-        </div>
-      </div>
-      <div className="LienSQL">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main">Accédez au GitHub</a>
       </div>
       <div className="conclusionSQL">
         <h2>Conclusion</h2>

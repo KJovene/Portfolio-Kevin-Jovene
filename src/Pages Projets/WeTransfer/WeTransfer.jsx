@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import './WeTransfer.css';
 import Menu from '../../assets/Menu/Menu';
+import { motion } from 'framer-motion';
 
 const WeTransfer = () => {
   useEffect(() => {
     const handleScroll = () => {
-      const elements = document.querySelectorAll('.objectifTransfer, .technologiesTransfer, .fonctionnementTransfer, .conclusionTransfer');
+      const elements = document.querySelectorAll('.objectifTransfer, .technologiesTransfer, .fonctionnementTransfer, .conclusionTransfer, .imageTransfer, .image2Transfer, .resumeTransfer');
       elements.forEach(element => {
         const rect = element.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,22 +24,35 @@ const WeTransfer = () => {
 
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreTransfer">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreTransfer">
         <div className="containerTitre">
-          <h1>Projet RPG Textuel en Python</h1>
+          <h1>Application de gestion de dossier</h1>
         </div>
-      </div>
-      <div>
-        <p>
-          Ce projet nous a permis de développer une application web complète avec un système d’inscription, 
-          de connexion, de téléchargement, de partage et de suppression des fichiers. Pour cela, nous avons utilisé PHP en backend 
-          et avons hébergé notre projet sur un serveur local avec XAMPP.
-        </p>
-        </div>
+      </motion.div>
       <div className="BodyTransfer">
+        <div className='resumeTransfer'>
+          <h2>Résumé du projet</h2>
+          <p>
+            Ce projet nous a permis de développer une application web complète avec un système d’inscription, 
+            de connexion, de téléchargement, de partage et de suppression des fichiers. Pour cela, nous avons utilisé PHP en backend 
+            et avons hébergé notre projet sur un serveur local avec XAMPP.
+          </p>
+        </div>
         <div className="imageTransfer">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image Transfer" />
+          <img src="../../../Img/ImageTransfer/Transfer.jpg" alt="Image Transfer" />
         </div>
         <div className="objectifTransfer">
           <h2>Objectifs du projet</h2>
@@ -74,11 +88,11 @@ const WeTransfer = () => {
           </ul>
         </div>
         <div className="image2Transfer">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image Transfer" />
+          <img src="../../../Img/ImageTransfer/concept-controle-qualite-standard-m_23-2150041854.avif" alt="Image Transfer" />
         </div>
       </div>
       <div className="LienTransfer">
-        <a href="https://github.com/KJovene/py-projet2-rpg/tree/main" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/KJovene/Projet_Helico_Pat">
           Accédez au GitHub
         </a>
       </div>

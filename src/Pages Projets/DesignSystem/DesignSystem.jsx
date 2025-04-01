@@ -1,11 +1,12 @@
 import React, { useEffect} from 'react';
 import './DesignSystem.css';
 import Menu from '../../assets/Menu/Menu';
+import { motion } from 'framer-motion';
 
 const DesignSystem = () => {
   useEffect(() => {
       const handleScroll = () => {
-        const elements = document.querySelectorAll('.objectifSystem, .methodoSystem, .fonctionnementSystem, .conclusionSystem');
+        const elements = document.querySelectorAll('.objectifSystem, .methodoSystem, .fonctionnementSystem, .conclusionSystem, .imageSystem, .image2System');
         elements.forEach(element => {
           const rect = element.getBoundingClientRect();
           if (rect.top < window.innerHeight && rect.bottom >= 0) {
@@ -23,17 +24,29 @@ const DesignSystem = () => {
   
   return (
     <div className="BodyPage">
-      <Menu />
-      <div className="TitreSystem">
+      <motion.div
+        motions={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        >
+        <Menu />
+      </motion.div>
+      <motion.div 
+      motions={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="TitreSystem">
         <div className="containerTitre">
-          <h1>Design System de l'applicaiton Reddit</h1>
+          <h1>Design System de l'application Reddit</h1>
         </div>
-      </div>
+      </motion.div>
       <div className="BodySystem">
           <div className='imageSystem'>
-            <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--4--qqemt.jpg" alt="Image RPG Textuel" />
+            <img src="../../../Img/ImageSystem/Reddit_Lockup.jpg" alt="Image RPG Textuel" />
           </div>
-        <div className="objectifDesign">
+        <div className="objectifSystem">
           <h2>Objectifs du projet</h2>
           <p>L’objectif principal était de concevoir un Design System complet et cohérent permettant de :</p>
           <ul>
@@ -50,6 +63,7 @@ const DesignSystem = () => {
             <li>Normes et guidelines UI : Respect de la charte graphique de Reddit</li>
             <li>Système de variantes et auto-layout pour assurer flexibilité et adaptabilité</li>
           </ul>
+        </div>
         </div>
         <div className="fonctionnementSystem">
           <h2>Conception et structuration du Design System</h2>
@@ -73,10 +87,6 @@ const DesignSystem = () => {
             <li>Prototypage et tests : Simulation des interactions pour valider la cohérence du design</li>
           </ul>
         </div>
-        <div className="image2System">
-          <img src="../../../Img/ImageRpg/Z5fjI77lH3qAQx7Wntfv--2--6cz89.jpg" alt="Image System" />
-        </div>
-      </div>
       <div className="conclusionSystem">
         <h2>Conclusion</h2>
         <p>Ce projet nous a permis d’approfondir les principes du Design System et de maîtriser Figma en créant un ensemble de composants UI modulables pour l’application mobile Reddit. Grâce à cette approche, nous avons pu concevoir un système flexible, structuré et facile à maintenir, essentiel pour garantir une expérience utilisateur homogène et optimisée.Une immersion complète dans le design UI et la conception de produits digitaux ! </p>
