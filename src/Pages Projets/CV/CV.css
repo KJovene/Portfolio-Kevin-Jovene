@@ -1,0 +1,28 @@
+body {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.CvContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.CvContainer img {
+  width: 400px;
+}
+.CvContainer h1 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(5, 104, 190);
+  opacity: 0; 
+  transition: opacity 0.5s ease-out;
+}
+.CvContainer h1 {
+  animation: slideInFromLeft 1.5s forwards;
