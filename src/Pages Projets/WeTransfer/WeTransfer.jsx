@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import './WeTransfer.css';
 import Menu from '../../assets/Menu/Menu';
 import { motion } from 'framer-motion';
+import './WeTransfer.css';
 
 const WeTransfer = () => {
   useEffect(() => {

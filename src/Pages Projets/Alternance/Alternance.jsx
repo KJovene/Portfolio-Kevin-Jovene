@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import './Alternance.css';
 import Menu from '../../assets/Menu/Menu';
 import { motion } from 'framer-motion';
+import './Alternance.css';
 
 const Alternance = () => {
   useEffect(() => {
